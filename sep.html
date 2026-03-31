@@ -13,7 +13,7 @@
         This is another paragraph.
         </p>
 
-        <p>第二段文字</p>
+        <p style="font-family: Arial, Helvetica, sans-serif; opacity: 0.5; /* 透明度 */">第二段文字</p>
         <p>This is another paragraph.</p>
         <hr>
 
@@ -26,7 +26,11 @@
             <h1> iPhone 17 Pro  </h1>
             <h3> Pro 實力全釋放。 </h3>
             <h4> NT$39,900 起</h4>
-            <img src="image/iphone17 pro.jpg" alt="iPhone 17 Pro" width="300">
+            <img src="image/iphone17 pro.jpg" alt="iPhone 17 Pro" width="300" style="opacity: 0.5;">
+        </div>
+
+        <div id="title">
+            <h1>為你幫幫忙。</h1>
         </div>
 
     </body>
@@ -34,18 +38,49 @@
 
 <style>
     body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
+        background-color: #fff1b2;
+        background-image: url('image/background.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        line-height: 1.6; /* 行高 */
+        letter-spacing: 2px; /* 字母間距 */
+    }
+    h1 {
+        text-align: center; /* 字體位置 */
+        width: 600px; /* 整個標籤所佔的框 寬度 */
+        height: 200px; /* 整個標籤所佔的框 高度 */
+
+        text-shadow: #ff7575 2px 2px 4px; /* 文字陰影：顏色 水平偏移 垂直偏移 模糊半徑 */
+
+        border: 1px solid #000000; /* 邊框 */
+        border-width: 2px; /* 邊框寬度 */
+        border-style: dashed; /* 邊框樣式：虛線的樣式 */
+        border-color: rgb(58, 163, 255);
+        border-radius: 20px; /* 邊框圓角 */
+
+        padding: 100px; /* 內間距 */
+        margin: 50px; /* 外間距 */
     }
     p {
-        color: #700000;
+        color: rgb(230, 32, 2);
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        font-size: 32px; /* 字體大小 */
+        font-weight: 700; /* 字體粗細 */
+
+        padding-top: 30px; /* 上內間距 */
+        margin-top: 50px; /* 上外間距 */
     }
     a {
-        color: #000912;
+        color: #0080ff;
         text-decoration: none;
+        padding: 10px 20px 30px 40px; /* 上 右 下 左 */
     }
     a:hover {
-        text-decoration: underline;
+        color: #ff0505;
+        /* font-size: 2rem; /* 字體大小 */ 
+        text-decoration: underline; /* 下劃線 */
     }
 
     .card {
@@ -54,6 +89,19 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         color: #c1feff
-        !important;
     }
+
+    .importantCard {
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #ffc7c1
+    }
+
+    #title {
+        color: rgb(156, 156, 255);
+    }
+
+
 </style>
