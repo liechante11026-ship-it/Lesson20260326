@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Tutorial</title>
+    </head>
+    <body onload="init()">
+
+        <h1>This is a heading</h1>
+        <h2>This is a subheading</h2>
+        <h3>This is a smaller heading</h3>
+        <h4>This is an even smaller heading</h4>
+        <p>第一段文字 <br>
+        This is another paragraph.
+        </p>
+
+        <p style="font-family: Arial, Helvetica, sans-serif; opacity: 0.5; /* 透明度 */">第二段文字</p>
+        <p>This is another paragraph.</p>
+        <hr>
+
+        <a href="https://www.youtube.com/watch?v=DJsZ2N0zUZg">請點擊我</a>
+        <br>
+        <img src="image/狗.webp" alt="一隻狗" width="480">
+        <p>這是一隻三個月大的黃金獵犬</p>
+
+        <div class="card">
+            <h1> iPhone 17 Pro  </h1>
+            <h3> Pro 實力全釋放。 </h3>
+            <h4> NT$39,900 起</h4>
+            <img src="image/iphone17 pro.jpg" alt="iPhone 17 Pro" width="300" style="opacity: 0.5;">
+        </div>
+
+        <div id="title">
+            <h1>為你幫幫忙。</h1>
+        </div>
+
+        <button class="important" onclick="changeText()">重要按鈕</button>
+        <div id="text">這是一段文字。</div>
+
+        <button class="important" onclick="getData()">獲得資料</button>
+
+        <button class="important" onclick="changeTextFont()">改變字體</button>
+        <div id="text2">這是第二段文字。</div>
+
+        <button class="important" onclick="changeTextStyle()">改變字體樣式</button>
+
+        <button class="important" onclick="sayHello()">打招呼</button>
+
+        <button class="important" onclick="variable()">變數示範</button>
+
+        <button class="important" onclick="showName()">聯絡我們</button>
+        <!-- <div id="Display">這段文字可以被隱藏</div> -->
+
+        <div id="Display" style="display: none;">
+            <h2>表單範例</h2>
+            <form>
+                <label>姓名：</label>
+                <input type="text" id="name" placeholder="請輸入姓名"><br>
+                <label>密碼：</label>
+                <input type="password" id="password" placeholder="請輸入密碼"><br>
+                <label>電子郵件：</label>
+                <input type="email" id="email" placeholder="請輸入電子郵件"><br>
+                <label>電話：</label>
+                <input type="tel" id="phone" placeholder="請輸入電話號碼"><br>
+                <button type="button" onclick="showName()">送出</button>
+            </form>
+            <div id="result"></div>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    async function init() {
+        // 這裡可以放一些初始化的代碼，例如獲取數據、設置事件監聽器等
+        variable();
+    }
+    // JavaScript 代碼可以放在這裡，JavaScript的語法
+    // 沒有很強調型別，所以不需要宣告變數的型別
+    function changeText() {
+        const text = document.getElementById("text");
+        // const 是一個常數（表示現在要宣告變數，是什麼型態無所謂），宣告後不能再被重新賦值
+        // getElementById 是一個方法（function），用來根據元素的 ID 獲取該元素
+
+        text.innerHTML = "<h1>按下了按鈕！</h1>";
+        // innerHTML 是一個屬性，用來獲取或設置元素的 HTML 內容
+    }
+
+    function getData() {
+        const text = document.getElementById("text");
+        console.log("這是一些數據:" + text.innerHTML);
+    }
+
+    function changeTextFont() {
+        document.getElementById("text2").textContent = "<h1>新的東東</h1>";
+        // textContent 是一個屬性，用來獲取或設置元素的文本內容，與 innerHTML 不同的是，它不會解析 HTML 標籤，而是將其作為純文本處理
+    }
+
+    function changeTextStyle() {
+        const text = document.getElementById("text2");
+        text.style.color = "red";
+        text.style.fontSize = "32px";
+        text.style.fontWeight = "700";
+        text.innerHTML = "<h1>改成這樣</h1>";
+    }
+
+    function sayHello() {
+        alert("Hello!");
+    }
+
+    function variable() {
+        let a = 10; // let 是一個變數（表示現在要宣告變數，是什麼型態無所謂），宣告後可以被重新賦值
+        const b = 20; // const 是一個常數（表示現在要宣告變數，是什麼型態無所謂），宣告後不能再被重新賦值
+
+        console.log("a: " + a);
+        console.log("b: " + b);
+
+        a = 15; // 重新賦值
+        console.log("a: " + a);
+
+        // b = 25; // 這會導致錯誤，因為 b 是一個常數
+
+        if (a > b) {
+            console.log("a 大於 b");
+        } else if (a < b) {
+            console.log("a 小於 b");
+        } else {
+            console.log("a 等於 b");
+        }
+    }
+
+    function showName() {
+        let name = document.getElementById("name").value;
+        if (name === "") {
+            alert("請輸入姓名！");
+            return;
+        }
+        document.getElementById("result").textContent = "歡迎，" + name;
+    }
+
+    function showName() {
+        const text = document.getElementById("Display");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<style>
+    body {
+        background-color: #fff1b2;
+        background-image: url('image/background.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        line-height: 1.6; /* 行高 */
+        letter-spacing: 2px; /* 字母間距 */
+    }
+    h1 {
+        text-align: center; /* 字體位置 */
+        width: 600px; /* 整個標籤所佔的框 寬度 */
+        height: 200px; /* 整個標籤所佔的框 高度 */
+
+        text-shadow: #ff7575 2px 2px 4px; /* 文字陰影：顏色 水平偏移 垂直偏移 模糊半徑 */
+
+        border: 1px solid #000000; /* 邊框 */
+        border-width: 2px; /* 邊框寬度 */
+        border-style: dashed; /* 邊框樣式：虛線的樣式 */
+        border-color: rgb(58, 163, 255);
+        border-radius: 20px; /* 邊框圓角 */
+
+        padding: 100px; /* 內間距 */
+        margin: 50px; /* 外間距 */
+    }
+    p {
+        color: rgb(230, 32, 2);
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        font-size: 32px; /* 字體大小 */
+        font-weight: 700; /* 字體粗細 */
+
+        padding-top: 30px; /* 上內間距 */
+        margin-top: 50px; /* 上外間距 */
+    }
+    a {
+        color: #0080ff;
+        text-decoration: none;
+        padding: 10px 20px 30px 40px; /* 上 右 下 左 */
+    }
+    a:hover {
+        color: #ff0505;
+        /* font-size: 2rem; /* 字體大小 */ 
+        text-decoration: underline; /* 下劃線 */
+    }
+
+    .card {
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #c1feff
+    }
+
+    .important{
+        background-color: #80e5ff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 18px; /* 字體大小 */
+        color: #000000
+    }
+
+    #title {
+        color: rgb(156, 156, 255);
+    }
+
+
+</style>
