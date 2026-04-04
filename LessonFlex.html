@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>文字圖片左右排列</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+        這是一段文字內容，你可以放介紹、說明或任何文字。
+        這裡會在左邊顯示。
+        </div>
+
+        <div class="image">
+        <img src="image/狗.webp" alt="示意圖片">
+        </div>
+
+        <div class="text">
+        這是一段文字內容，你可以放介紹、說明或任何文字。
+        這裡會在左邊顯示。
+        </div>
+    </div>
+    <div class="text">
+        這是一段文字內容，你可以放介紹、說明或任何文字。
+        這裡會在左邊顯示。
+    </div>
+    <div class="text">
+        這是一段文字內容，你可以放介紹、說明或任何文字。
+        這裡會在左邊顯示。
+    </div>
+
+    <div class="box">
+        <div class="container">
+            <div class="card">
+                <div class="text">
+                這是一段文字內容，你可以放介紹、說明或任何文字。
+                這裡會在左邊顯示。
+                </div>
+
+                <div class="image">
+                <img src="image/狗.webp" alt="示意圖片">
+                </div>
+            </div>
+            <div class="card">
+                <div class="text">
+                這是一段文字內容，你可以放介紹、說明或任何文字。
+                這裡會在左邊顯示。
+                </div>
+
+                <div class="image">
+                <img src="image/狗.webp" alt="示意圖片">
+                </div>
+            </div>
+            <div class="card">
+                <div class="text">
+                這是一段文字內容，你可以放介紹、說明或任何文字。
+                這裡會在左邊顯示。
+                </div>
+
+                <div class="image">
+                <img src="image/狗.webp" alt="示意圖片">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card2">
+                <div class="text">
+                這是一段文字內容，你可以放介紹、說明或任何文字。
+                這裡會在左邊顯示。
+                </div>
+
+                <div class="image">
+                <img src="image/狗.webp" alt="示意圖片">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="text">
+                這是一段文字內容，你可以放介紹、說明或任何文字。
+                這裡會在左邊顯示。
+                </div>
+
+                <div class="image">
+                <img src="image/狗.webp" alt="示意圖片">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+      /* margin: 30px auto; */
+      /* gap: 20px;  元素之間的間距 */
+      background-color: #ffd398;
+    }
+
+    .text {
+      flex: 1;
+      padding-right: 20px;
+      font-size: 18px;
+    }
+
+    .image img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .card {
+        /* display: flex; */
+        align-items: center; /* 垂直置中 */
+        justify-content: space-between; /* 水平分散 */
+        background-color: #fff7b3;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #006668;
+
+        width: 500px; /* 最大寬度 */
+        height: 350px; /* 固定高度 */
+        /* 有加上max-width/height 的話就不會超過設定大小，但如果內容不足450px就會自動縮小，這樣就不會有空白的問題了 */
+    }
+
+    .card2 {
+        display: flex;
+        align-items: center; /* 垂直置中 */
+        justify-content: space-between; /* 水平分散 */
+        background-color: #c8ffbc;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #006668;
+        width: 500px;
+        height: 350px;
+    }
+
+    .box {
+        align-items: center; /* 垂直置中 */
+        justify-content: space-between; /* 水平分散 */
+        background-color: #eeffeb;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #06145b;
+    }
+
+    /* 響應式網頁設計：手機版 */
+    /* 直接複製貼上到所有style最下面就好 */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>

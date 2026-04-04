@@ -30,7 +30,8 @@
         </div>
 
         <div id="title">
-            <h1>為你幫幫忙。</h1>
+            <h1 onMouseOver="showInformation()">為你幫幫忙。</h1>
+            <div id="information"></div>
         </div>
 
         <button class="important" onclick="changeText()">重要按鈕</button>
@@ -47,7 +48,7 @@
 
         <button class="important" onclick="variable()">變數示範</button>
 
-        <button class="important" onclick="showName()">聯絡我們</button>
+        <button class="important" onclick="show()">聯絡我們</button>
         <!-- <div id="Display">這段文字可以被隱藏</div> -->
 
         <div id="Display" style="display: none;">
@@ -129,7 +130,15 @@
     }
 
     function showName() {
+        let age = prompt("你的年齡", 18);
+        let isConfirmed = confirm("是否要送出資料？");
+        if (!isConfirmed) { // !就是取反的意思，表示如果 isConfirmed 是 false 的話，就會進入這個條件
+            return; // 如果用戶點擊取消，則退出函數，不繼續執行後面的代碼
+        }
         let name = document.getElementById("name").value;
+        console.log("年齡: " + age);
+        console.log("是否確認: " + isConfirmed);
+
         if (name === "") {
             alert("請輸入姓名！");
             return;
@@ -137,13 +146,17 @@
         document.getElementById("result").textContent = "歡迎，" + name;
     }
 
-    function showName() {
+    function show() {
         const text = document.getElementById("Display");
         if (text.style.display === "none") {
             text.style.display = "block";
         } else {
             text.style.display = "none";
         }
+    }
+
+    function showInformation() {
+        document.getElementById("information").textContent = "請聯絡我們的客服人員！";
     }
 </script>
 
